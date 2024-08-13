@@ -11,6 +11,8 @@ import org.enigma.virtualmuseumvisitingplatform.dto.response.user.UserSignupDto;
 import org.enigma.virtualmuseumvisitingplatform.entity.User;
 import org.enigma.virtualmuseumvisitingplatform.entity.role.ERole;
 import org.enigma.virtualmuseumvisitingplatform.entity.role.Role;
+import org.enigma.virtualmuseumvisitingplatform.exceptions.cutomExceptions.ExistsUserException;
+import org.enigma.virtualmuseumvisitingplatform.exceptions.cutomExceptions.RoleNotFountException;
 import org.enigma.virtualmuseumvisitingplatform.repository.user.UserRepository;
 import org.enigma.virtualmuseumvisitingplatform.repository.role.RoleRepository;
 import org.enigma.virtualmuseumvisitingplatform.security.entities.UserDetailsImpl;
@@ -61,7 +63,7 @@ public class UserService implements IUserService {
     @Override
     public Result register(UserSignupDto userSignupDto) {
         if (userRepository.existsByUsername(userSignupDto.getUsername())) {
-            //throw new ExistsUserException("Error: Username is already taken!");
+            throw new ExistsUserException("Error: Username is already taken!");
         }
 
 
@@ -74,10 +76,9 @@ public class UserService implements IUserService {
 
 
         Role userRole = roleRepository.findByName(ERole.USER)
-                .orElseThrow(() -> null);
+                .orElseThrow(() -> new RoleNotFountException("Error: Role is not found."));
         roles.add(userRole);
 
-        // new RoleNotFountException("Error: Role is not found.")
 
         user.setRoles(roles);
         userRepository.save(user);
