@@ -1,4 +1,4 @@
-package org.enigma.virtualmuseumvisitingplatform.controller;
+package org.enigma.virtualmuseumvisitingplatform.controller.user;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -15,9 +15,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/users")
+@RequestMapping("/api/auth")
 @RequiredArgsConstructor
-public class UserController {
+public class AuthController {
 
     private final IUserService userService;
 

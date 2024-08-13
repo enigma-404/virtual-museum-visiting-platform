@@ -66,7 +66,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth ->
                         auth.requestMatchers("/api/auth/**").permitAll()
                                 .requestMatchers(permitSwagger).permitAll()
-                                .anyRequest().hasAuthority("ADMIN")
+                                .anyRequest().authenticated()
                 );
 
         http.authenticationProvider(authenticationProvider());
