@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import org.enigma.virtualmuseumvisitingplatform.entity.role.Role;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -22,6 +23,8 @@ public class User {
     private String username;
     private String password;
 
+    private boolean state = false;
+
     public User(String username, String password){
         this.username = username;
         this.password = password;
@@ -32,4 +35,15 @@ public class User {
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roles = new HashSet<>();
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Comment> comments;
+
+    @ManyToMany
+    @JoinTable(
+            name = "user_saved_artifacts",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "artifact_id")
+    )
+    private List<Artifact> savedArtifacts;
 }
