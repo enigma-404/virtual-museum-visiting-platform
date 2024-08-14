@@ -2,8 +2,7 @@ package org.enigma.virtualmuseumvisitingplatform.exceptions;
 
 import org.enigma.virtualmuseumvisitingplatform.core.result.DataResult;
 import org.enigma.virtualmuseumvisitingplatform.core.result.ErrorDataResult;
-import org.enigma.virtualmuseumvisitingplatform.exceptions.cutomExceptions.ExistsUserException;
-import org.enigma.virtualmuseumvisitingplatform.exceptions.cutomExceptions.RoleNotFountException;
+import org.enigma.virtualmuseumvisitingplatform.exceptions.cutomExceptions.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
@@ -37,5 +36,18 @@ public class GlobalExceptionHandler {
         return new ResponseEntity<>("User not found", HttpStatus.BAD_REQUEST);
     }
 
+    @ExceptionHandler(MuseumNotFoundException.class)
+    public ResponseEntity<String> handleMuseumNotFoundException() {
+        return new ResponseEntity<>("Museum not found", HttpStatus.BAD_REQUEST);
+    }
 
+    @ExceptionHandler(CategoryNotFoundException.class)
+    public ResponseEntity<String> handleCategoryNotFoundException() {
+        return new ResponseEntity<>("Category not found", HttpStatus.BAD_REQUEST);
+    }
+
+    @ExceptionHandler(CommentNotFoundException.class)
+    public ResponseEntity<String> handleCommentNotFoundException() {
+        return new ResponseEntity<>("Comment not found", HttpStatus.BAD_REQUEST);
+    }
 }
