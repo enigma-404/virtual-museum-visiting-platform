@@ -1,6 +1,7 @@
 package org.enigma.virtualmuseumvisitingplatform.service.concretes.comments;
 
 import lombok.RequiredArgsConstructor;
+import org.enigma.virtualmuseumvisitingplatform.core.components.LLamaAIAdapter;
 import org.enigma.virtualmuseumvisitingplatform.core.result.DataResult;
 import org.enigma.virtualmuseumvisitingplatform.core.result.Result;
 import org.enigma.virtualmuseumvisitingplatform.core.result.SuccessDataResult;
@@ -9,6 +10,7 @@ import org.enigma.virtualmuseumvisitingplatform.dto.request.comment.CommentSaveR
 import org.enigma.virtualmuseumvisitingplatform.dto.response.comment.CommentResponseDTO;
 import org.enigma.virtualmuseumvisitingplatform.entity.Comment;
 import org.enigma.virtualmuseumvisitingplatform.exceptions.cutomExceptions.CommentNotFoundException;
+import org.enigma.virtualmuseumvisitingplatform.exceptions.cutomExceptions.DetectSwearException;
 import org.enigma.virtualmuseumvisitingplatform.mapper.CommentMapper;
 import org.enigma.virtualmuseumvisitingplatform.repository.comment.CommentRepository;
 import org.enigma.virtualmuseumvisitingplatform.service.abstracts.comments.ICommentService;
@@ -22,6 +24,7 @@ public class CommentService implements ICommentService {
 
     private final CommentRepository commentRepository;
     private final CommentMapper commentMapper;
+    private final LLamaAIAdapter llamaAIAdapter;
 
     @Override
     public Result saveComment(CommentSaveRequestDTO commentSaveRequestDTO) {
@@ -29,8 +32,14 @@ public class CommentService implements ICommentService {
         // map to entity
         Comment comment = this.commentMapper.commentSaveRequestDTOToComment(commentSaveRequestDTO);
 
-        // save comment
-        this.commentRepository.save(comment);
+        // save comment and return commentId
+        Long commentId = this.commentRepository.save(comment).getId();
+
+        // check comment
+        if(llamaAIAdapter.isSwear(comment.getText())){
+            this.deleteComment(commentId);
+            throw new DetectSwearException("Detected Swear");
+        }
         return new SuccessResult("Comment saved");
     }
 

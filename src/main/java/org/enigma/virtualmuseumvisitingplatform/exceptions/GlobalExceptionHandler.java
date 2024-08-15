@@ -50,4 +50,14 @@ public class GlobalExceptionHandler {
     public ResponseEntity<String> handleCommentNotFoundException() {
         return new ResponseEntity<>("Comment not found", HttpStatus.BAD_REQUEST);
     }
+
+    @ExceptionHandler(DetectSwearException.class)
+    public ResponseEntity<String> detectSwearException() {
+        return new ResponseEntity<>("detect swear in comment", HttpStatus.BAD_REQUEST);
+    }
+    @ExceptionHandler(ArtifactNotFoundException.class)
+    public ResponseEntity<String> artifactNotFoundException() {
+        return new ResponseEntity<>("artifact not found", HttpStatus.BAD_REQUEST);
+    }
+
 }
