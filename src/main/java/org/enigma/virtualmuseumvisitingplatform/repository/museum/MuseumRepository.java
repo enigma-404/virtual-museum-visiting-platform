@@ -9,7 +9,5 @@ import java.util.List;
 
 @Repository
 public interface MuseumRepository extends JpaRepository<Museum, Long> {
-    @Query("SELECT m FROM Museum m WHERE m.state = false")
-    List<Museum> findAllActive();
 }
 

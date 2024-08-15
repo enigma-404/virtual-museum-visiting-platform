@@ -24,7 +24,7 @@ public class Museum {
     private String name;
     private String description;
 
-    private boolean state = false;
+    private boolean status = true;
 
     @CreationTimestamp
     private Instant createdAt;

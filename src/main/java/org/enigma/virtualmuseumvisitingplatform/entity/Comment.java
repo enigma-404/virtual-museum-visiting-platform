@@ -24,7 +24,7 @@ public class Comment {
     private Long id;
     private String text;
     private LocalDateTime timestamp;
-    private boolean state = false;
+    private boolean status = true;
 
     @CreationTimestamp
     private Instant createdAt;
