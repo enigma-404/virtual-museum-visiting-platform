@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
-@Table(name = "comment")
+@Table(name = "comments")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

@@ -12,7 +12,7 @@ import java.time.Instant;
 import java.util.List;
 
 @Entity
-@Table(name = "museum")
+@Table(name = "museums")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
