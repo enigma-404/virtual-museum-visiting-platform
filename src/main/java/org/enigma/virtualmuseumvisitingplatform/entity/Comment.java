@@ -36,25 +36,13 @@ public class Comment {
     @JoinColumn(name = "user_id")
     private User user;
 
-    @ManyToOne
-    @JoinColumn(name = "museum_id")
-    private Museum museum;
 
     @ManyToOne
     @JoinColumn(name = "artifact_id")
     private Artifact artifact;
 
-    @ManyToOne
-    @JoinColumn(name = "parent_id")
-    private Comment parent;
+//    @ManyToOne
+//    @JoinColumn(name = "parent_id")
+//    private Comment parent;
 
-    @OneToMany(mappedBy = "parent", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<Comment> replies;
-
-    public void softDelete() {
-        this.state = true;
-        for (Comment reply : replies) {
-            reply.softDelete();
-        }
-    }
 }

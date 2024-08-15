@@ -23,8 +23,7 @@ public class Museum {
     private Long id;
     private String name;
     private String description;
-    private int likeCount;
-    private int dislikeCount;
+
     private boolean state = false;
 
     @CreationTimestamp
@@ -33,12 +32,4 @@ public class Museum {
     @UpdateTimestamp
     private Instant modifiedAt;
 
-    @ManyToOne
-    private Category category;
-
-    @OneToMany(mappedBy = "museum", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<Artifact> artifacts;
-
-    @OneToMany(mappedBy = "museum", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<Comment> comments;
 }
