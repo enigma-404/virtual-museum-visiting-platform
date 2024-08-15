@@ -1,4 +1,4 @@
-package org.enigma.virtualmuseumvisitingplatform.service.concretes;
+package org.enigma.virtualmuseumvisitingplatform.service.concretes.users;
 
 import lombok.RequiredArgsConstructor;
 import org.enigma.virtualmuseumvisitingplatform.core.result.DataResult;
@@ -17,7 +17,7 @@ import org.enigma.virtualmuseumvisitingplatform.repository.user.UserRepository;
 import org.enigma.virtualmuseumvisitingplatform.repository.role.RoleRepository;
 import org.enigma.virtualmuseumvisitingplatform.security.entities.UserDetailsImpl;
 import org.enigma.virtualmuseumvisitingplatform.security.jwt.JWTUtils;
-import org.enigma.virtualmuseumvisitingplatform.service.abstracts.IUserService;
+import org.enigma.virtualmuseumvisitingplatform.service.abstracts.users.IUserService;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;

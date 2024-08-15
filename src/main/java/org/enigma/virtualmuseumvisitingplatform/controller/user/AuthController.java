@@ -7,7 +7,7 @@ import org.enigma.virtualmuseumvisitingplatform.core.result.Result;
 import org.enigma.virtualmuseumvisitingplatform.dto.request.user.UserLoginDto;
 import org.enigma.virtualmuseumvisitingplatform.dto.response.user.UserInfoResponse;
 import org.enigma.virtualmuseumvisitingplatform.dto.response.user.UserSignupDto;
-import org.enigma.virtualmuseumvisitingplatform.service.abstracts.IUserService;
+import org.enigma.virtualmuseumvisitingplatform.service.abstracts.users.IUserService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

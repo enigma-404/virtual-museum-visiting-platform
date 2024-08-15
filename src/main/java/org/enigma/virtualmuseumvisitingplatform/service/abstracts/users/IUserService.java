@@ -1,4 +1,4 @@
-package org.enigma.virtualmuseumvisitingplatform.service.abstracts;
+package org.enigma.virtualmuseumvisitingplatform.service.abstracts.users;
 
 import org.enigma.virtualmuseumvisitingplatform.core.result.DataResult;
 import org.enigma.virtualmuseumvisitingplatform.core.result.Result;
