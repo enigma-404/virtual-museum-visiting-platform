@@ -1,5 +1,6 @@
 package org.enigma.virtualmuseumvisitingplatform.controller.museums;
 
+import jakarta.validation.Valid;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.enigma.virtualmuseumvisitingplatform.core.result.DataResult;
@@ -31,12 +32,12 @@ public class MuseumController {
     }
 
     @PostMapping
-    public ResponseEntity<Result> save(@RequestBody MuseumSaveRequestDTO museumSaveRequestDTO){
+    public ResponseEntity<Result> save(@RequestBody @Valid MuseumSaveRequestDTO museumSaveRequestDTO){
         return ResponseEntity.ok(this.museumService.saveMuseum(museumSaveRequestDTO));
     }
 
     @PutMapping
-    public ResponseEntity<Result> update(@RequestParam Long id, @RequestBody MuseumUpdateRequestDTO museumUpdateRequestDTO){
+    public ResponseEntity<Result> update(@RequestParam Long id, @RequestBody @Valid MuseumUpdateRequestDTO museumUpdateRequestDTO){
         return ResponseEntity.ok(this.museumService.updateMuseum(id, museumUpdateRequestDTO));
     }
 

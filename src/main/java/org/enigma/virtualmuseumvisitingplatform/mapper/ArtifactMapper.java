@@ -4,10 +4,7 @@ import org.enigma.virtualmuseumvisitingplatform.dto.request.artifact.ArtifactSav
 import org.enigma.virtualmuseumvisitingplatform.dto.request.artifact.ArtifactUpdateRequestDTO;
 import org.enigma.virtualmuseumvisitingplatform.dto.response.artifact.ArtifactResponseDTO;
 import org.enigma.virtualmuseumvisitingplatform.entity.Artifact;
-import org.mapstruct.Mapper;
-import org.mapstruct.MappingTarget;
-import org.mapstruct.NullValuePropertyMappingStrategy;
-import org.mapstruct.ReportingPolicy;
+import org.mapstruct.*;
 
 import java.util.List;
 
@@ -16,6 +13,8 @@ import java.util.List;
         unmappedTargetPolicy = ReportingPolicy.IGNORE
 )
 public interface ArtifactMapper {
+
+    @Mapping(target = "museum.id", source = "museumId")
     Artifact artifactRequestDtoToArtifact(ArtifactSaveRequestDTO dto);
     ArtifactResponseDTO artifactToArtifactResponseDTO(Artifact artifact);
     void updateArtifact(@MappingTarget Artifact artifact, ArtifactUpdateRequestDTO updateRequestDTO);
