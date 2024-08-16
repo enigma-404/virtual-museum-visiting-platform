@@ -96,7 +96,6 @@ class GlobalExceptionHandlerTest {
         assertEquals("Museum not found", responseEntity.getBody());
     }
 
-
     @Test
     void testHandleCommentNotFoundException() throws Exception {
         ResponseEntity<String> responseEntity = globalExceptionHandler.handleCommentNotFoundException();

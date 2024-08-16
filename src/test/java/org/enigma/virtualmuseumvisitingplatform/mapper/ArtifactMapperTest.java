@@ -3,7 +3,7 @@ package org.enigma.virtualmuseumvisitingplatform.mapper;
 import org.enigma.virtualmuseumvisitingplatform.dto.request.artifact.ArtifactSaveRequestDTO;
 import org.enigma.virtualmuseumvisitingplatform.dto.request.artifact.ArtifactUpdateRequestDTO;
 import org.enigma.virtualmuseumvisitingplatform.dto.response.artifact.ArtifactResponseDTO;
-import org.enigma.virtualmuseumvisitingplatform.entity.Artifact;
+import org.enigma.virtualmuseumvisitingplatform.entity.artifacts.Artifact;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

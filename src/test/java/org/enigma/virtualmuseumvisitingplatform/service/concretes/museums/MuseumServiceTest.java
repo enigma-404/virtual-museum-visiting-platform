@@ -110,19 +110,16 @@ class MuseumServiceTest {
         Museum museum = new Museum();
         museum.setId(museumId);
         museum.setName("Name");
-        museumRepository.save(museum);
 
         MuseumUpdateRequestDTO museumUpdateRequestDTO = new MuseumUpdateRequestDTO();
         museumUpdateRequestDTO.setName("Updated Name");
 
         when(museumRepository.findById(museumId)).thenReturn(Optional.of(museum));
 
-        // Ensure the mapper modifies the museum object
         doAnswer(invocation -> {
             Museum targetMuseum = invocation.getArgument(0);
             MuseumUpdateRequestDTO sourceDTO = invocation.getArgument(1);
             targetMuseum.setName(sourceDTO.getName());
-            // Simulate other modifications if necessary
             return null;
         }).when(museumMapper).updateMuseumWithMuseumUpdateRequestDTO(any(Museum.class), any(MuseumUpdateRequestDTO.class));
 
@@ -133,8 +130,9 @@ class MuseumServiceTest {
         assertEquals("Successfully updated Museum with id: " + museumId, result.getMessage());
 
         verify(museumRepository, times(1)).findById(museumId);
-        verify(museumRepository, times(1)).save(museum);
+        verify(museumRepository, times(1)).save(museum); // Check that save is called only once
     }
+
 
     @Test
     void testUpdateMuseum_NotFound() {
