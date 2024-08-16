@@ -8,11 +8,15 @@ import org.enigma.virtualmuseumvisitingplatform.core.utilities.result.SuccessRes
 import org.enigma.virtualmuseumvisitingplatform.dto.request.user.UserLoginDto;
 import org.enigma.virtualmuseumvisitingplatform.dto.response.user.UserInfoResponse;
 import org.enigma.virtualmuseumvisitingplatform.dto.response.user.UserSignupDto;
+import org.enigma.virtualmuseumvisitingplatform.entity.artifacts.Artifact;
 import org.enigma.virtualmuseumvisitingplatform.entity.users.User;
 import org.enigma.virtualmuseumvisitingplatform.entity.role.ERole;
 import org.enigma.virtualmuseumvisitingplatform.entity.role.Role;
+import org.enigma.virtualmuseumvisitingplatform.exceptions.cutomExceptions.ArtifactAlreadyExists;
+import org.enigma.virtualmuseumvisitingplatform.exceptions.cutomExceptions.ArtifactNotFoundException;
 import org.enigma.virtualmuseumvisitingplatform.exceptions.cutomExceptions.ExistsUserException;
 import org.enigma.virtualmuseumvisitingplatform.exceptions.cutomExceptions.RoleNotFountException;
+import org.enigma.virtualmuseumvisitingplatform.repository.artifact.ArtifactRepository;
 import org.enigma.virtualmuseumvisitingplatform.repository.user.UserRepository;
 import org.enigma.virtualmuseumvisitingplatform.repository.role.RoleRepository;
 import org.enigma.virtualmuseumvisitingplatform.security.entities.UserDetailsImpl;
@@ -23,6 +27,7 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -40,6 +45,7 @@ public class UserService implements IUserService {
     private final RoleRepository roleRepository;
     private final PasswordEncoder encoder;
     private final JWTUtils jwtUtils;
+    private final ArtifactRepository artifactRepository;
 
     @Override
     public DataResult<UserInfoResponse> login(UserLoginDto userLoginDto) {
@@ -85,5 +91,27 @@ public class UserService implements IUserService {
 
 
         return new SuccessResult("User successfully added");
+    }
+
+    @Override
+    public Result addFavourite(long userId, long artifactId) {
+        User user = this.userRepository.findById(userId).orElseThrow(() -> new UsernameNotFoundException("Error: User not found."));
+
+        user.getSavedArtifacts().forEach(s -> {
+            if (s.getId() == artifactId) {
+                throw new ArtifactAlreadyExists("Artifact Already Exists");
+            }
+        });
+        List<Artifact> artifacts = this.artifactRepository.findAllById(artifactId);
+        user.setSavedArtifacts(artifacts);
+
+        this.userRepository.save(user);
+        return new SuccessResult("User successfully added");
+    }
+
+    @Override
+    public DataResult<List<Artifact>> getFavourites(long userId) {
+        User user = this.userRepository.findById(userId).orElseThrow(() -> new UsernameNotFoundException("Error: User not found."));
+        return new SuccessDataResult<>(user.getSavedArtifacts(), "successfully found artifacts");
     }
 }

@@ -11,5 +11,8 @@ import java.util.List;
 public interface ArtifactRepository extends JpaRepository<Artifact, Long> {
     @Query("SELECT a FROM Artifact a WHERE a.state = false")
     List<Artifact> findAllActive();
+
+
+    List<Artifact> findAllById(Long id);
 }
 

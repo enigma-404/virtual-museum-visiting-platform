@@ -55,4 +55,9 @@ public class GlobalExceptionHandler {
         return new ResponseEntity<>("artifact not found", HttpStatus.BAD_REQUEST);
     }
 
+    @ExceptionHandler(ArtifactAlreadyExists.class)
+    public ResponseEntity<String> artifactAlreadyExists() {
+        return new ResponseEntity<>("artifact already exists", HttpStatus.BAD_REQUEST);
+    }
+
 }
