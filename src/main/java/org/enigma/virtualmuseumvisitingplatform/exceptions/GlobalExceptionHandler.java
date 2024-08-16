@@ -1,7 +1,7 @@
 package org.enigma.virtualmuseumvisitingplatform.exceptions;
 
-import org.enigma.virtualmuseumvisitingplatform.core.result.DataResult;
-import org.enigma.virtualmuseumvisitingplatform.core.result.ErrorDataResult;
+import org.enigma.virtualmuseumvisitingplatform.core.utilities.result.DataResult;
+import org.enigma.virtualmuseumvisitingplatform.core.utilities.result.ErrorDataResult;
 import org.enigma.virtualmuseumvisitingplatform.exceptions.cutomExceptions.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

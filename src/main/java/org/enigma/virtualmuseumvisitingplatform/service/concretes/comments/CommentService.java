@@ -2,13 +2,13 @@ package org.enigma.virtualmuseumvisitingplatform.service.concretes.comments;
 
 import lombok.RequiredArgsConstructor;
 import org.enigma.virtualmuseumvisitingplatform.core.components.LLamaAIAdapter;
-import org.enigma.virtualmuseumvisitingplatform.core.result.DataResult;
-import org.enigma.virtualmuseumvisitingplatform.core.result.Result;
-import org.enigma.virtualmuseumvisitingplatform.core.result.SuccessDataResult;
-import org.enigma.virtualmuseumvisitingplatform.core.result.SuccessResult;
+import org.enigma.virtualmuseumvisitingplatform.core.utilities.result.DataResult;
+import org.enigma.virtualmuseumvisitingplatform.core.utilities.result.Result;
+import org.enigma.virtualmuseumvisitingplatform.core.utilities.result.SuccessDataResult;
+import org.enigma.virtualmuseumvisitingplatform.core.utilities.result.SuccessResult;
 import org.enigma.virtualmuseumvisitingplatform.dto.request.comment.CommentSaveRequestDTO;
 import org.enigma.virtualmuseumvisitingplatform.dto.response.comment.CommentResponseDTO;
-import org.enigma.virtualmuseumvisitingplatform.entity.Comment;
+import org.enigma.virtualmuseumvisitingplatform.entity.comments.Comment;
 import org.enigma.virtualmuseumvisitingplatform.exceptions.cutomExceptions.CommentNotFoundException;
 import org.enigma.virtualmuseumvisitingplatform.exceptions.cutomExceptions.DetectSwearException;
 import org.enigma.virtualmuseumvisitingplatform.mapper.CommentMapper;

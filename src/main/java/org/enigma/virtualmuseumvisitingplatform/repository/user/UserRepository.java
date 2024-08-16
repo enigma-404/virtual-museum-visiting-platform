@@ -1,6 +1,6 @@
 package org.enigma.virtualmuseumvisitingplatform.repository.user;
 
-import org.enigma.virtualmuseumvisitingplatform.entity.User;
+import org.enigma.virtualmuseumvisitingplatform.entity.users.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

@@ -1,4 +1,4 @@
-package org.enigma.virtualmuseumvisitingplatform.core.result;
+package org.enigma.virtualmuseumvisitingplatform.core.utilities.result;
 
 public class SuccessResult extends Result{
     public SuccessResult(){

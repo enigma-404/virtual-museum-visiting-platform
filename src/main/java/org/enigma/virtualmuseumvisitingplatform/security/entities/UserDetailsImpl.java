@@ -1,7 +1,7 @@
 package org.enigma.virtualmuseumvisitingplatform.security.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.enigma.virtualmuseumvisitingplatform.entity.User;
+import org.enigma.virtualmuseumvisitingplatform.entity.users.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

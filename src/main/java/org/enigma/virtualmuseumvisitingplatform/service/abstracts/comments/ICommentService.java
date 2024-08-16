@@ -1,7 +1,7 @@
 package org.enigma.virtualmuseumvisitingplatform.service.abstracts.comments;
 
-import org.enigma.virtualmuseumvisitingplatform.core.result.DataResult;
-import org.enigma.virtualmuseumvisitingplatform.core.result.Result;
+import org.enigma.virtualmuseumvisitingplatform.core.utilities.result.DataResult;
+import org.enigma.virtualmuseumvisitingplatform.core.utilities.result.Result;
 import org.enigma.virtualmuseumvisitingplatform.dto.request.comment.CommentSaveRequestDTO;
 import org.enigma.virtualmuseumvisitingplatform.dto.response.comment.CommentResponseDTO;
 

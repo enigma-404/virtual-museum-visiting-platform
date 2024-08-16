@@ -1,6 +1,6 @@
 package org.enigma.virtualmuseumvisitingplatform.security.business;
 
-import org.enigma.virtualmuseumvisitingplatform.entity.User;
+import org.enigma.virtualmuseumvisitingplatform.entity.users.User;
 import org.enigma.virtualmuseumvisitingplatform.repository.user.UserRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

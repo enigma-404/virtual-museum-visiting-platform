@@ -2,9 +2,9 @@ package org.enigma.virtualmuseumvisitingplatform.mapper;
 
 import org.enigma.virtualmuseumvisitingplatform.dto.request.comment.CommentSaveRequestDTO;
 import org.enigma.virtualmuseumvisitingplatform.dto.response.comment.CommentResponseDTO;
-import org.enigma.virtualmuseumvisitingplatform.entity.Artifact;
-import org.enigma.virtualmuseumvisitingplatform.entity.Comment;
-import org.enigma.virtualmuseumvisitingplatform.entity.User;
+import org.enigma.virtualmuseumvisitingplatform.entity.artifacts.Artifact;
+import org.enigma.virtualmuseumvisitingplatform.entity.comments.Comment;
+import org.enigma.virtualmuseumvisitingplatform.entity.users.User;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mapstruct.factory.Mappers;

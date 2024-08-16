@@ -1,11 +1,11 @@
 package org.enigma.virtualmuseumvisitingplatform.service.concretes.museums;
 
-import org.enigma.virtualmuseumvisitingplatform.core.result.DataResult;
-import org.enigma.virtualmuseumvisitingplatform.core.result.Result;
+import org.enigma.virtualmuseumvisitingplatform.core.utilities.result.DataResult;
+import org.enigma.virtualmuseumvisitingplatform.core.utilities.result.Result;
 import org.enigma.virtualmuseumvisitingplatform.dto.request.museum.MuseumSaveRequestDTO;
 import org.enigma.virtualmuseumvisitingplatform.dto.request.museum.MuseumUpdateRequestDTO;
 import org.enigma.virtualmuseumvisitingplatform.dto.response.museum.MuseumResponseDTO;
-import org.enigma.virtualmuseumvisitingplatform.entity.Museum;
+import org.enigma.virtualmuseumvisitingplatform.entity.museums.Museum;
 import org.enigma.virtualmuseumvisitingplatform.exceptions.cutomExceptions.MuseumNotFoundException;
 import org.enigma.virtualmuseumvisitingplatform.mapper.MuseumMapper;
 import org.enigma.virtualmuseumvisitingplatform.repository.museum.MuseumRepository;

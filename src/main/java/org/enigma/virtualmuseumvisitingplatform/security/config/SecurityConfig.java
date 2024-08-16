@@ -66,6 +66,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth ->
                         auth.requestMatchers("/api/auth/**").permitAll()
                                 .requestMatchers(permitSwagger).permitAll()
+                                .requestMatchers("/api/picture/**").permitAll()
                                 .anyRequest().authenticated()
                 );
 

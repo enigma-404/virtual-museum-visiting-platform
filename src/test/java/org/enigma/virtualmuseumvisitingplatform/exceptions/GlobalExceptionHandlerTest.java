@@ -1,6 +1,6 @@
 package org.enigma.virtualmuseumvisitingplatform.exceptions;
 
-import org.enigma.virtualmuseumvisitingplatform.core.result.DataResult;
+import org.enigma.virtualmuseumvisitingplatform.core.utilities.result.DataResult;
 import org.enigma.virtualmuseumvisitingplatform.security.business.CustomUserDetailsService;
 import org.enigma.virtualmuseumvisitingplatform.security.jwt.JWTUtils;
 import org.junit.jupiter.api.BeforeEach;

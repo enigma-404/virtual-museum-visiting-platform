@@ -1,6 +1,6 @@
 package org.enigma.virtualmuseumvisitingplatform.repository.artifact;
 
-import org.enigma.virtualmuseumvisitingplatform.entity.Artifact;
+import org.enigma.virtualmuseumvisitingplatform.entity.artifacts.Artifact;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;

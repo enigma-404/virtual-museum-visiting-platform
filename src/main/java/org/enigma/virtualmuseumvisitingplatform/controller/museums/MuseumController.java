@@ -1,10 +1,9 @@
 package org.enigma.virtualmuseumvisitingplatform.controller.museums;
 
 import jakarta.validation.Valid;
-import lombok.Getter;
 import lombok.RequiredArgsConstructor;
-import org.enigma.virtualmuseumvisitingplatform.core.result.DataResult;
-import org.enigma.virtualmuseumvisitingplatform.core.result.Result;
+import org.enigma.virtualmuseumvisitingplatform.core.utilities.result.DataResult;
+import org.enigma.virtualmuseumvisitingplatform.core.utilities.result.Result;
 import org.enigma.virtualmuseumvisitingplatform.dto.request.museum.MuseumSaveRequestDTO;
 import org.enigma.virtualmuseumvisitingplatform.dto.request.museum.MuseumUpdateRequestDTO;
 import org.enigma.virtualmuseumvisitingplatform.dto.response.museum.MuseumResponseDTO;

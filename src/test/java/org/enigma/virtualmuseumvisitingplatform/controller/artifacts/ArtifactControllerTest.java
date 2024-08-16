@@ -1,7 +1,7 @@
 package org.enigma.virtualmuseumvisitingplatform.controller.artifacts;
 
-import org.enigma.virtualmuseumvisitingplatform.core.result.DataResult;
-import org.enigma.virtualmuseumvisitingplatform.core.result.Result;
+import org.enigma.virtualmuseumvisitingplatform.core.utilities.result.DataResult;
+import org.enigma.virtualmuseumvisitingplatform.core.utilities.result.Result;
 import org.enigma.virtualmuseumvisitingplatform.dto.request.artifact.ArtifactUpdateRequestDTO;
 import org.enigma.virtualmuseumvisitingplatform.dto.response.artifact.ArtifactResponseDTO;
 import org.enigma.virtualmuseumvisitingplatform.security.business.CustomUserDetailsService;

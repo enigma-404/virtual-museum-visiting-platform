@@ -1,9 +1,11 @@
-package org.enigma.virtualmuseumvisitingplatform.entity;
+package org.enigma.virtualmuseumvisitingplatform.entity.artifacts;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.enigma.virtualmuseumvisitingplatform.entity.comments.Comment;
+import org.enigma.virtualmuseumvisitingplatform.entity.museums.Museum;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;

@@ -2,7 +2,7 @@ package org.enigma.virtualmuseumvisitingplatform.controller.comments;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-import org.enigma.virtualmuseumvisitingplatform.core.result.Result;
+import org.enigma.virtualmuseumvisitingplatform.core.utilities.result.Result;
 import org.enigma.virtualmuseumvisitingplatform.dto.request.comment.CommentSaveRequestDTO;
 import org.enigma.virtualmuseumvisitingplatform.service.abstracts.comments.ICommentService;
 import org.springframework.http.ResponseEntity;

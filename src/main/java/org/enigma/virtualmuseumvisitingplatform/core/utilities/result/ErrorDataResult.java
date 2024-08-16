@@ -1,4 +1,4 @@
-package org.enigma.virtualmuseumvisitingplatform.core.result;
+package org.enigma.virtualmuseumvisitingplatform.core.utilities.result;
 
 public class ErrorDataResult<T> extends DataResult<T>{
     public ErrorDataResult(T data) {

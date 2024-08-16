@@ -1,7 +1,7 @@
 package org.enigma.virtualmuseumvisitingplatform.security.business;
 
 import lombok.AllArgsConstructor;
-import org.enigma.virtualmuseumvisitingplatform.entity.User;
+import org.enigma.virtualmuseumvisitingplatform.entity.users.User;
 import org.enigma.virtualmuseumvisitingplatform.repository.user.UserRepository;
 import org.enigma.virtualmuseumvisitingplatform.security.entities.UserDetailsImpl;
 import org.springframework.security.core.userdetails.UserDetails;

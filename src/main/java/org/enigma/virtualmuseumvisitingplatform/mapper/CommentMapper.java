@@ -3,7 +3,7 @@ package org.enigma.virtualmuseumvisitingplatform.mapper;
 
 import org.enigma.virtualmuseumvisitingplatform.dto.request.comment.CommentSaveRequestDTO;
 import org.enigma.virtualmuseumvisitingplatform.dto.response.comment.CommentResponseDTO;
-import org.enigma.virtualmuseumvisitingplatform.entity.Comment;
+import org.enigma.virtualmuseumvisitingplatform.entity.comments.Comment;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.NullValuePropertyMappingStrategy;

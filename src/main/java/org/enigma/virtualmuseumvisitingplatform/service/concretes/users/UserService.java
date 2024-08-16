@@ -1,14 +1,14 @@
 package org.enigma.virtualmuseumvisitingplatform.service.concretes.users;
 
 import lombok.RequiredArgsConstructor;
-import org.enigma.virtualmuseumvisitingplatform.core.result.DataResult;
-import org.enigma.virtualmuseumvisitingplatform.core.result.Result;
-import org.enigma.virtualmuseumvisitingplatform.core.result.SuccessDataResult;
-import org.enigma.virtualmuseumvisitingplatform.core.result.SuccessResult;
+import org.enigma.virtualmuseumvisitingplatform.core.utilities.result.DataResult;
+import org.enigma.virtualmuseumvisitingplatform.core.utilities.result.Result;
+import org.enigma.virtualmuseumvisitingplatform.core.utilities.result.SuccessDataResult;
+import org.enigma.virtualmuseumvisitingplatform.core.utilities.result.SuccessResult;
 import org.enigma.virtualmuseumvisitingplatform.dto.request.user.UserLoginDto;
 import org.enigma.virtualmuseumvisitingplatform.dto.response.user.UserInfoResponse;
 import org.enigma.virtualmuseumvisitingplatform.dto.response.user.UserSignupDto;
-import org.enigma.virtualmuseumvisitingplatform.entity.User;
+import org.enigma.virtualmuseumvisitingplatform.entity.users.User;
 import org.enigma.virtualmuseumvisitingplatform.entity.role.ERole;
 import org.enigma.virtualmuseumvisitingplatform.entity.role.Role;
 import org.enigma.virtualmuseumvisitingplatform.exceptions.cutomExceptions.ExistsUserException;

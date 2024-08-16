@@ -1,6 +1,6 @@
 package org.enigma.virtualmuseumvisitingplatform.controller.comments;
 
-import org.enigma.virtualmuseumvisitingplatform.core.result.Result;
+import org.enigma.virtualmuseumvisitingplatform.core.utilities.result.Result;
 import org.enigma.virtualmuseumvisitingplatform.dto.request.comment.CommentSaveRequestDTO;
 import org.enigma.virtualmuseumvisitingplatform.security.business.CustomUserDetailsService;
 import org.enigma.virtualmuseumvisitingplatform.security.jwt.JWTUtils;

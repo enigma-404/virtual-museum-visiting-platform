@@ -1,7 +1,7 @@
 package org.enigma.virtualmuseumvisitingplatform.mapper;
 
 import org.enigma.virtualmuseumvisitingplatform.dto.request.user.UserLoginDto;
-import org.enigma.virtualmuseumvisitingplatform.entity.User;
+import org.enigma.virtualmuseumvisitingplatform.entity.users.User;
 import org.mapstruct.Mapper;
 import org.mapstruct.NullValuePropertyMappingStrategy;
 import org.mapstruct.ReportingPolicy;

@@ -1,9 +1,10 @@
-package org.enigma.virtualmuseumvisitingplatform.entity;
+package org.enigma.virtualmuseumvisitingplatform.entity.users;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.enigma.virtualmuseumvisitingplatform.entity.artifacts.Artifact;
 import org.enigma.virtualmuseumvisitingplatform.entity.role.Role;
 
 import java.util.HashSet;

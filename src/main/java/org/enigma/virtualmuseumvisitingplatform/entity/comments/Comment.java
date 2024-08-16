@@ -1,16 +1,17 @@
-package org.enigma.virtualmuseumvisitingplatform.entity;
+package org.enigma.virtualmuseumvisitingplatform.entity.comments;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.enigma.virtualmuseumvisitingplatform.entity.artifacts.Artifact;
+import org.enigma.virtualmuseumvisitingplatform.entity.users.User;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.time.Instant;
 import java.time.LocalDateTime;
-import java.util.List;
 
 @Entity
 @Table(name = "comments")
