@@ -2,6 +2,7 @@ package org.enigma.virtualmuseumvisitingplatform.entity.artifacts;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.enigma.virtualmuseumvisitingplatform.entity.comments.Comment;
@@ -16,6 +17,7 @@ import java.util.List;
 @Entity
 @Table(name = "artifacts")
 @Data
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @EntityListeners(AuditingEntityListener.class)

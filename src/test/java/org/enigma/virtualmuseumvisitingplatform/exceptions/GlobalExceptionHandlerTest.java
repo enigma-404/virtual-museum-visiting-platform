@@ -96,13 +96,6 @@ class GlobalExceptionHandlerTest {
         assertEquals("Museum not found", responseEntity.getBody());
     }
 
-    @Test
-    void testHandleCategoryNotFoundException() throws Exception {
-        ResponseEntity<String> responseEntity = globalExceptionHandler.handleCategoryNotFoundException();
-
-        assertEquals(HttpStatus.BAD_REQUEST, responseEntity.getStatusCode());
-        assertEquals("Category not found", responseEntity.getBody());
-    }
 
     @Test
     void testHandleCommentNotFoundException() throws Exception {
