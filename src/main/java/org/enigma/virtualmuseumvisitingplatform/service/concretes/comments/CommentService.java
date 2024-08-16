@@ -15,7 +15,6 @@ import org.enigma.virtualmuseumvisitingplatform.mapper.CommentMapper;
 import org.enigma.virtualmuseumvisitingplatform.repository.comment.CommentRepository;
 import org.enigma.virtualmuseumvisitingplatform.service.abstracts.comments.ICommentService;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 
 @Service

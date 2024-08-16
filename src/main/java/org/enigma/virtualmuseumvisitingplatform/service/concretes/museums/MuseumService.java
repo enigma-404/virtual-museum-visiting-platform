@@ -32,6 +32,9 @@ public class MuseumService implements IMuseumService {
 
         // update values with mapper
         this.museumMapper.updateMuseumWithMuseumUpdateRequestDTO(museum, museumUpdateRequestDTO);
+
+        // save museum
+        this.museumRepository.save(museum);
         return new SuccessResult("Successfully updated Museum with id: " + id);
     }
 

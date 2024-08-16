@@ -9,6 +9,4 @@ public class MuseumResponseDTO {
     private Long id;
     private String name;
     private String description;
-    private int likeCount;
-    private int dislikeCount;
 }

@@ -41,11 +41,6 @@ public class GlobalExceptionHandler {
         return new ResponseEntity<>("Museum not found", HttpStatus.BAD_REQUEST);
     }
 
-    @ExceptionHandler(CategoryNotFoundException.class)
-    public ResponseEntity<String> handleCategoryNotFoundException() {
-        return new ResponseEntity<>("Category not found", HttpStatus.BAD_REQUEST);
-    }
-
     @ExceptionHandler(CommentNotFoundException.class)
     public ResponseEntity<String> handleCommentNotFoundException() {
         return new ResponseEntity<>("Comment not found", HttpStatus.BAD_REQUEST);
