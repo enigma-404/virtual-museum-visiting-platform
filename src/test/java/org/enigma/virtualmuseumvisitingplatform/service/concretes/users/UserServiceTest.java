@@ -10,6 +10,7 @@ import org.enigma.virtualmuseumvisitingplatform.entity.role.ERole;
 import org.enigma.virtualmuseumvisitingplatform.entity.role.Role;
 import org.enigma.virtualmuseumvisitingplatform.exceptions.cutomExceptions.ExistsUserException;
 import org.enigma.virtualmuseumvisitingplatform.exceptions.cutomExceptions.RoleNotFountException;
+import org.enigma.virtualmuseumvisitingplatform.repository.artifact.ArtifactRepository;
 import org.enigma.virtualmuseumvisitingplatform.repository.role.RoleRepository;
 import org.enigma.virtualmuseumvisitingplatform.repository.user.UserRepository;
 import org.enigma.virtualmuseumvisitingplatform.security.entities.UserDetailsImpl;
@@ -36,6 +37,7 @@ class UserServiceTest {
     private RoleRepository roleRepository;
     private PasswordEncoder passwordEncoder;
     private JWTUtils jwtUtils;
+    private ArtifactRepository artifactRepository;
 
     @BeforeEach
     void setUp() {
@@ -44,7 +46,8 @@ class UserServiceTest {
         roleRepository = mock(RoleRepository.class);
         passwordEncoder = mock(PasswordEncoder.class);
         jwtUtils = mock(JWTUtils.class);
-        userService = new UserService(authenticationManager, userRepository, roleRepository, passwordEncoder, jwtUtils);
+        artifactRepository = mock(ArtifactRepository.class);
+        userService = new UserService(authenticationManager, userRepository, roleRepository, passwordEncoder, jwtUtils,artifactRepository );
     }
 
     @Test
